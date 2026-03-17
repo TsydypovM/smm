@@ -278,13 +278,11 @@ header a:hover, footer a:hover {
 }
 
 /* ===== ФОРМА ===== */
+/* Убрана белая подложка, форма теперь прозрачная */
 form {
-    background-color: #ffffff;
-    padding: 40px;
     max-width: 700px;
     margin: 0 auto;
-    border: 1px solid #e8dfd1;
-    box-sizing: border-box;
+    padding: 0;
 }
 
 form div {
@@ -308,7 +306,7 @@ form > div > p {
     flex-shrink: 0;
 }
 
-/* Контейнер для содержимого справа (поля ввода, сетки) */
+/* Контейнер для содержимого справа */
 .form-content {
     flex: 1;
     min-width: 250px;
@@ -326,6 +324,7 @@ form textarea {
     background-color: #fefcf8;
     transition: all 0.3s;
     box-sizing: border-box;
+    border-radius: 0;
 }
 
 form input[type="text"]:focus,
