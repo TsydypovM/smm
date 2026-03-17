@@ -7,17 +7,18 @@ body {
     margin: 0;
     padding: 0;
     background-color: #faf7f2;
-    color: #5e5b56;
+    color: #2c3e50;
     line-height: 1.6;
+    font-size: 18px;
 }
 
-h1, h2, h3, h4, h5, h6, p, li, figcaption, td, th, a, label, input, select, textarea {
+h1, h2, h3, h4, h5, h6, p, li, figcaption, td, th, a, label, input, select, textarea, form div label {
     font-family: 'Cormorant Garamond', serif;
 }
 
 h1 {
-    font-size: 42px;
-    color: #4a4a44;
+    font-size: 48px;
+    color: #2c3e50;
     border-bottom: 3px solid #9ab0a0;
     padding-bottom: 15px;
     margin-bottom: 40px;
@@ -26,19 +27,18 @@ h1 {
 }
 
 h2 {
-    font-size: 32px;
-    color: #4a4a44;
+    font-size: 36px;
+    color: #2c3e50;
     margin-top: 50px;
     margin-bottom: 25px;
     font-weight: 600;
 }
 
-/* Убраны все зелёные палочки (псевдоэлементы) */
 h2::before {
     display: none;
 }
 
-/* ===== ШАПКА (HEADER) ===== */
+/* ===== ШАПКА ===== */
 header {
     background-color: #e8dfd1;
     padding: 20px 40px;
@@ -74,7 +74,7 @@ header nav ul li a {
     color: #2c3e50 !important;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 1px;
     text-transform: uppercase;
     padding: 5px 0;
@@ -87,7 +87,7 @@ header nav ul li a:hover {
     border-bottom: 2px solid #9ab0a0;
 }
 
-/* ===== ПОДВАЛ (FOOTER) ===== */
+/* ===== ПОДВАЛ ===== */
 footer {
     background-color: #0F45C7;
     padding: 20px 40px;
@@ -121,8 +121,8 @@ footer nav ul {
 
 footer nav ul li a {
     color: white !important;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
     font-size: 18px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -189,16 +189,16 @@ figcaption {
 
 figcaption h3 {
     margin: 0 0 8px;
-    color: #4a4a44;
-    font-size: 22px;
+    color: #2c3e50;
+    font-size: 24px;
     padding-left: 0;
 }
 
 figcaption p {
     margin: 0;
-    color: #6b6b63;
+    color: #4a4a44;
     line-height: 1.5;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 /* ===== ТАБЛИЦЫ ===== */
@@ -207,57 +207,42 @@ table {
     border-collapse: collapse;
     margin: 40px 0;
     background-color: #ffffff;
-    box-shadow: 0 8px 20px rgba(90, 80, 70, 0.08);
+    border: 1px solid #b0a28a;
+}
+
+th, td {
+    border: 1px solid #b0a28a;
+    padding: 10px;
+    vertical-align: middle;
 }
 
 th {
     background-color: #9ab0a0;
     color: white;
-    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
     font-weight: 600;
-    font-size: 18px;
     text-align: center;
-    padding: 15px;
-    border: 2px solid #6b8c7d;
-    border-style: double;
-    letter-spacing: 0.5px;
 }
 
-/* Поле с № и первый столбец (желтоватый) */
+/* Ячейки с цифрами 1 и 2 - желтоватый цвет */
 th:first-child,
 td:first-child {
     background-color: #f5e6d3;
-    color: #5e4c3a;
+    color: #2c3e50;
     font-weight: 600;
-}
-
-/* Цифры в первом столбце — шрифт с засечками (уже наследуется) */
-td:first-child {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
 }
 
 td {
     background-color: #fefcf8;
-    color: #5e5b56;
-    padding: 15px;
-    border: 1px solid #dacfc1;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 400;
-    font-size: 16px;
-    vertical-align: middle;
+    color: #2c3e50;
+    font-size: 18px;
 }
 
 td img {
     display: block;
     max-width: 200px;
     height: auto;
-    border: 2px solid #e8dfd1;
-    transition: opacity 0.3s;
-}
-
-td img:hover {
-    opacity: 0.9;
+    border: 1px solid #b0a28a;
 }
 
 /* ===== ССЫЛКИ ===== */
@@ -266,6 +251,7 @@ a:link {
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s;
+    font-size: 18px;
 }
 
 a:visited {
@@ -295,37 +281,51 @@ header a:hover, footer a:hover {
 form {
     background-color: #ffffff;
     padding: 40px;
-    box-shadow: 0 10px 30px rgba(154, 176, 160, 0.1);
     max-width: 700px;
     margin: 0 auto;
     border: 1px solid #e8dfd1;
+    box-sizing: border-box;
 }
 
 form div {
     margin-bottom: 25px;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
+    width: 100%;
 }
 
-form label {
+/* Все лейблы и заголовки секций */
+form > div > label,
+form > div > p {
     width: 200px;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
-    font-size: 18px;
-    color: #4a4a44;
+    font-size: 20px;
+    color: #2c3e50;
+    margin: 8px 15px 0 0;
+    padding: 0;
+    flex-shrink: 0;
 }
 
+/* Контейнер для содержимого справа (поля ввода, сетки) */
+.form-content {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Поля ввода */
 form input[type="text"],
 form select,
 form textarea {
-    flex: 1;
+    width: 100%;
     padding: 12px 15px;
     border: 2px solid #e8dfd1;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 16px;
+    font-size: 18px;
     background-color: #fefcf8;
     transition: all 0.3s;
+    box-sizing: border-box;
 }
 
 form input[type="text"]:focus,
@@ -337,30 +337,58 @@ form textarea:focus {
     box-shadow: 0 0 0 3px rgba(154, 176, 160, 0.2);
 }
 
-form div:has(input[type="checkbox"]),
-form div:has(input[type="radio"]) {
+/* Сетка для цветовой гаммы 2x2 */
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 20px;
+    margin-top: 5px;
+}
+
+.checkbox-grid label {
+    width: auto;
+    font-weight: 400;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Сетка для стилей интерьера */
+.radio-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    align-items: center;
+    gap: 12px 25px;
+    margin-top: 5px;
 }
 
-form div:has(input[type="checkbox"]) label,
-form div:has(input[type="radio"]) label {
+.radio-grid label {
     width: auto;
-    font-family: 'Cormorant Garamond', serif;
     font-weight: 400;
-    font-size: 17px;
-    color: #5e5b56;
-    margin-right: 15px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    white-space: nowrap;
 }
 
+/* Чекбоксы и радио */
 form input[type="checkbox"],
 form input[type="radio"] {
-    margin-right: 6px;
     accent-color: #9ab0a0;
     width: 18px;
     height: 18px;
+    margin: 0;
+}
+
+/* Кнопки */
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-left: 215px;
 }
 
 form input[type="submit"],
@@ -371,10 +399,9 @@ form input[type="reset"] {
     padding: 14px 35px;
     cursor: pointer;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     letter-spacing: 0.5px;
-    margin-right: 20px;
     transition: all 0.3s;
     border: 2px solid transparent;
 }
@@ -388,7 +415,7 @@ form input[type="reset"]:hover {
 
 form input[type="reset"] {
     background-color: #e8dfd1;
-    color: #4a4a44;
+    color: #2c3e50;
 }
 
 form input[type="reset"]:hover {
@@ -404,7 +431,6 @@ textarea {
 main img[width="600"] {
     max-width: 100%;
     height: auto;
-    box-shadow: 0 10px 30px rgba(90, 80, 70, 0.15);
     margin: 25px 0;
     border: 3px solid #ffffff;
     transition: transform 0.4s;
@@ -418,7 +444,7 @@ main div {
     background-color: #fefcf8;
     padding: 25px;
     margin: 30px 0;
-    border-left: 5px solid #9ab0a0;
+    border-left: none;
     box-shadow: 0 4px 12px rgba(154, 176, 160, 0.1);
 }
 

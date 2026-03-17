@@ -24,87 +24,112 @@
             <h1>Оформить заказ на дизайн-проект</h1>
             
             <form>
-                <!-- Поля ввода текста -->
+                <!-- ФИО -->
                 <div>
                     <label for="fio">ФИО заявителя:</label>
-                    <input type="text" id="fio" name="fio">
+                    <div class="form-content">
+                        <input type="text" id="fio" name="fio">
+                    </div>
                 </div>
                 
+                <!-- Адрес -->
                 <div>
                     <label for="address">Адрес объекта:</label>
-                    <input type="text" id="address" name="address">
+                    <div class="form-content">
+                        <input type="text" id="address" name="address">
+                    </div>
                 </div>
                 
+                <!-- Телефон -->
                 <div>
                     <label for="phone">Телефон:</label>
-                    <input type="text" id="phone" name="phone">
+                    <div class="form-content">
+                        <input type="text" id="phone" name="phone">
+                    </div>
                 </div>
                 
+                <!-- Email -->
                 <div>
                     <label for="email">Адрес электронной почты:</label>
-                    <input type="text" id="email" name="email">
+                    <div class="form-content">
+                        <input type="text" id="email" name="email">
+                    </div>
                 </div>
 
-                <!-- Флажки (цветовая гамма) -->
+                <!-- Цветовая гамма (матрица 2x2) -->
                 <div>
                     <p>Цветовая гамма:</p>
-                    <label>
-                        <input type="checkbox" name="color" value="light"> Светлая
-                    </label>
-                    <label>
-                        <input type="checkbox" name="color" value="dark"> Темная
-                    </label>
-                    <label>
-                        <input type="checkbox" name="color" value="natural"> Натуральная
-                    </label>
-                    <label>
-                        <input type="checkbox" name="color" value="bright"> Яркая
-                    </label>
+                    <div class="form-content">
+                        <div class="checkbox-grid">
+                            <label>
+                                <input type="checkbox" name="color" value="light"> Светлая
+                            </label>
+                            <label>
+                                <input type="checkbox" name="color" value="dark"> Темная
+                            </label>
+                            <label>
+                                <input type="checkbox" name="color" value="natural"> Натуральная
+                            </label>
+                            <label>
+                                <input type="checkbox" name="color" value="bright"> Яркая
+                            </label>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Селекторные переключатели (радио) -->
+                <!-- Стиль интерьера -->
                 <div>
                     <p>Стиль интерьера:</p>
-                    <label>
-                        <input type="radio" name="style" value="classic"> Классический
-                    </label>
-                    <label>
-                        <input type="radio" name="style" value="scandi"> Скандинавский
-                    </label>
-                    <label>
-                        <input type="radio" name="style" value="minimalism"> Минимализм
-                    </label>
-                    <label>
-                        <input type="radio" name="style" value="loft"> Лофт
-                    </label>
-                    <label>
-                        <input type="radio" name="style" value="artdeco"> Арт-деко
-                    </label>
-                    <label>
-                        <input type="radio" name="style" value="ethnic"> Этнический
-                    </label>
+                    <div class="form-content">
+                        <div class="radio-grid">
+                            <label>
+                                <input type="radio" name="style" value="classic"> Классический
+                            </label>
+                            <label>
+                                <input type="radio" name="style" value="scandi"> Скандинавский
+                            </label>
+                            <label>
+                                <input type="radio" name="style" value="minimalism"> Минимализм
+                            </label>
+                            <label>
+                                <input type="radio" name="style" value="loft"> Лофт
+                            </label>
+                            <label>
+                                <input type="radio" name="style" value="artdeco"> Арт-деко
+                            </label>
+                            <label>
+                                <input type="radio" name="style" value="ethnic"> Этнический
+                            </label>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Выпадающий список -->
+                <!-- Форма взаимодействия (выпадающий список) -->
                 <div>
                     <label for="contact">Форма взаимодействия:</label>
-                    <select id="contact" name="contact">
-                        <option value="email">По почте</option>
-                        <option value="phone">По телефону</option>
-                        <option value="other">Другое</option>
-                    </select>
+                    <div class="form-content">
+                        <select id="contact" name="contact">
+                            <option value="email">По почте</option>
+                            <option value="phone">По телефону</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
                 </div>
 
-                <!-- Многострочное поле ввода -->
+                <!-- Комментарий к дизайнеру (в одну строку) -->
                 <div>
                     <label for="comment">Комментарий к дизайнеру:</label>
-                    <textarea id="comment" name="comment" rows="5" cols="40" wrap="soft"></textarea>
+                    <div class="form-content">
+                        <textarea id="comment" name="comment" rows="5" cols="40" wrap="soft"></textarea>
+                    </div>
                 </div>
 
                 <!-- Кнопки -->
                 <div>
-                    <input type="submit" value="Оформить заказ">
-                    <input type="reset" value="Очистить форму">
+                    <div class="button-group">
+                        <input type="submit" value="Оформить заказ">
+                        <input type="reset" value="Очистить форму">
+                    </div>
                 </div>
             </form>
         </section>
@@ -116,8 +141,8 @@
         </a>
         <nav>
             <ul>
-                <li><a href="https://miet.ru/sveden/">О нас</a></li>
-                <li><a href="https://miet.ru/page/146704">Форма обратной связи</a></li>
+                <li><a href="about.html">О НАС</a></li>
+                <li><a href="form.html">ФОРМА ОБРАТНОЙ СВЯЗИ</a></li>
             </ul>
         </nav>
     </footer>
