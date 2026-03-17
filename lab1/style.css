@@ -1,4 +1,4 @@
-/* ===== ПОДКЛЮЧЕНИЕ ЭЛЕГАНТНОГО ШРИФТА ===== */
+/* ===== ПОДКЛЮЧЕНИЕ ШРИФТОВ ===== */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap');
 
 /* ===== ОБЩИЕ СТИЛИ ===== */
@@ -6,8 +6,8 @@ body {
     font-family: 'Cormorant Garamond', serif;
     margin: 0;
     padding: 0;
-    background-color: #faf7f2;  /* Тёплый пастельно-бежевый */
-    color: #5e5b56;  /* Мягкий серо-коричневый */
+    background-color: #faf7f2;
+    color: #5e5b56;
     line-height: 1.6;
 }
 
@@ -27,12 +27,12 @@ p, li, figcaption, td {
 
 /* ===== ШАПКА (HEADER) ===== */
 header {
-    background-color: #e8dfd1;  /* Нежный бежевый */
+    background-color: #e8dfd1;
     padding: 20px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 2px solid #9ab0a0;  /* Приглушённый зелёный */
+    border-bottom: 2px solid #9ab0a0;
     box-shadow: 0 4px 12px rgba(154, 176, 160, 0.15);
 }
 
@@ -70,20 +70,20 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #6b8c7d;  /* Мятно-зелёный */
+    color: #6b8c7d;
     border-bottom: 2px solid #9ab0a0;
 }
 
 /* ===== ПОДВАЛ (FOOTER) ===== */
 footer {
-    background-color: #e8dfd1;
+    background-color: #0F45C7;
     padding: 20px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-top: 2px solid #9ab0a0;
     margin-top: 60px;
-    box-shadow: 0 -4px 12px rgba(154, 176, 160, 0.15);
+    box-shadow: 0 -4px 12px rgba(15, 69, 199, 0.2);
 }
 
 footer a {
@@ -108,16 +108,17 @@ footer nav ul {
 }
 
 footer nav ul li a {
-    color: #4a4a44;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-size: 18px;
-    letter-spacing: 0.5px;
+    color: white !important;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.3px;
     transition: color 0.3s;
 }
 
 footer nav ul li a:hover {
-    color: #6b8c7d;
+    color: #ffcc00;
+    text-decoration: underline;
 }
 
 /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
@@ -201,23 +202,34 @@ table {
     box-shadow: 0 8px 20px rgba(90, 80, 70, 0.08);
 }
 
+/* Заголовки таблицы (зеленый фон) */
 th {
-    background-color: #9ab0a0;  /* Приглушённый зелёный */
-    color: #ffffff;
+    background-color: #9ab0a0;
+    color: white;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
     font-size: 18px;
     text-align: center;
     padding: 15px;
-    border: 2px double #c0cfc4;
+    border: 2px solid #6b8c7d;  /* Чёткая тёмная граница без сглаживания */
+    border-style: double;  /* Двойная линия */
     letter-spacing: 0.5px;
 }
 
+/* Поле с № и первый столбец (желтоватый) */
+th:first-child,
+td:first-child {
+    background-color: #f5e6d3;  /* Тёплый желтовато-бежевый */
+    color: #5e4c3a;  /* Тёмный текст для контраста */
+    font-weight: 600;
+}
+
+/* Обычные ячейки */
 td {
-    background-color: #fefcf8;  /* Очень светлый бежевый */
+    background-color: #fefcf8;
     color: #5e5b56;
     padding: 15px;
-    border: 1px solid #e8dfd1;
+    border: 1px solid #dacfc1;  /* Чёткая линия */
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     font-size: 14px;
@@ -239,18 +251,18 @@ td img:hover {
 
 /* ===== ССЫЛКИ ===== */
 a:link {
-    color: #6b8c7d;  /* Мятно-зелёный */
+    color: #6b8c7d;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s;
 }
 
 a:visited {
-    color: #8a7e72;  /* Приглушённый коричневый */
+    color: #8a7e72;
 }
 
 a:hover {
-    color: #4a6b5c;  /* Тёмный зелёный */
+    color: #4a6b5c;
     text-decoration: underline;
 }
 
@@ -258,15 +270,19 @@ a:active {
     color: #9ab0a0;
 }
 
-/* Ссылки в header/footer — свой стиль */
+/* Ссылки в header/footer */
 header a:link, header a:visited,
 footer a:link, footer a:visited {
-    color: #4a4a44;
+    color: white;
 }
 
 header a:hover, footer a:hover {
-    color: #6b8c7d;
+    color: #ffcc00;
     text-decoration: none;
+}
+
+header a:active, footer a:active {
+    color: #ffaa00;
 }
 
 /* ===== ФОРМА ===== */
@@ -295,7 +311,6 @@ form label {
     color: #4a4a44;
 }
 
-/* Поля ввода */
 form input[type="text"],
 form select,
 form textarea {
@@ -318,7 +333,6 @@ form textarea:focus {
     box-shadow: 0 0 0 3px rgba(154, 176, 160, 0.2);
 }
 
-/* Флажки и радио */
 form div:has(input[type="checkbox"]),
 form div:has(input[type="radio"]) {
     display: flex;
@@ -340,12 +354,11 @@ form div:has(input[type="radio"]) label {
 form input[type="checkbox"],
 form input[type="radio"] {
     margin-right: 6px;
-    accent-color: #9ab0a0;  /* Зелёные чекбоксы */
+    accent-color: #9ab0a0;
     width: 18px;
     height: 18px;
 }
 
-/* Кнопки */
 form input[type="submit"],
 form input[type="reset"] {
     background-color: #9ab0a0;
@@ -379,13 +392,11 @@ form input[type="reset"]:hover {
     background-color: #dacfc1;
 }
 
-/* Текстовая область */
 textarea {
     resize: vertical;
     min-height: 120px;
 }
 
-/* Заголовки страниц */
 h1 {
     font-size: 42px;
     color: #4a4a44;
@@ -417,7 +428,6 @@ h2::before {
     border-radius: 3px;
 }
 
-/* ===== СТРАНИЦЫ СТИЛЕЙ ===== */
 main img[width="600"] {
     max-width: 100%;
     height: auto;
@@ -432,7 +442,6 @@ main img[width="600"]:hover {
     transform: scale(1.01);
 }
 
-/* Описание стиля на страницах */
 main div {
     background-color: #fefcf8;
     padding: 25px;
