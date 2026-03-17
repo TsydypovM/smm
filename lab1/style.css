@@ -1,20 +1,39 @@
+/* ===== ПОДКЛЮЧЕНИЕ ЭЛЕГАНТНОГО ШРИФТА ===== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap');
+
 /* ===== ОБЩИЕ СТИЛИ ===== */
 body {
-    font-family: Georgia, serif;
+    font-family: 'Cormorant Garamond', serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #faf7f2;  /* Тёплый пастельно-бежевый */
+    color: #5e5b56;  /* Мягкий серо-коричневый */
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #4a4a44;
+}
+
+p, li, figcaption, td {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: #5e5b56;
 }
 
 /* ===== ШАПКА (HEADER) ===== */
 header {
-    background-color: #2c3e50;
-    padding: 20px;
+    background-color: #e8dfd1;  /* Нежный бежевый */
+    padding: 20px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 3px solid #e67e22;
+    border-bottom: 2px solid #9ab0a0;  /* Приглушённый зелёный */
+    box-shadow: 0 4px 12px rgba(154, 176, 160, 0.15);
 }
 
 header a {
@@ -23,6 +42,11 @@ header a {
 
 header img {
     vertical-align: middle;
+    transition: opacity 0.3s;
+}
+
+header img:hover {
+    opacity: 0.8;
 }
 
 header nav ul {
@@ -30,29 +54,36 @@ header nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 30px;
+    gap: 40px;
 }
 
 header nav ul li a {
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
+    color: #4a4a44;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
 }
 
 header nav ul li a:hover {
-    color: #e67e22;
-    text-decoration: underline;
+    color: #6b8c7d;  /* Мятно-зелёный */
+    border-bottom: 2px solid #9ab0a0;
 }
 
 /* ===== ПОДВАЛ (FOOTER) ===== */
 footer {
-    background-color: #2c3e50;
-    padding: 20px;
+    background-color: #e8dfd1;
+    padding: 20px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 3px solid #e67e22;
-    margin-top: 40px;
+    border-top: 2px solid #9ab0a0;
+    margin-top: 60px;
+    box-shadow: 0 -4px 12px rgba(154, 176, 160, 0.15);
 }
 
 footer a {
@@ -61,6 +92,11 @@ footer a {
 
 footer img {
     vertical-align: middle;
+    transition: opacity 0.3s;
+}
+
+footer img:hover {
+    opacity: 0.8;
 }
 
 footer nav ul {
@@ -68,25 +104,27 @@ footer nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 30px;
+    gap: 40px;
 }
 
 footer nav ul li a {
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
+    color: #4a4a44;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
 }
 
 footer nav ul li a:hover {
-    color: #e67e22;
-    text-decoration: underline;
+    color: #6b8c7d;
 }
 
 /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
 main {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
+    max-width: 1300px;
+    margin: 50px auto;
+    padding: 0 30px;
     min-height: 60vh;
 }
 
@@ -96,22 +134,24 @@ main section:last-child {
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
+    margin-top: 40px;
 }
 
 figure {
-    width: 300px;
+    width: 320px;
     margin: 0;
-    padding: 15px;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e0d9ce;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(90, 80, 70, 0.08);
+    transition: all 0.4s;
 }
 
 figure:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(107, 140, 125, 0.15);
+    border-color: #9ab0a0;
 }
 
 figure a {
@@ -121,106 +161,127 @@ figure a {
 
 figure img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 8px;
+    transition: transform 0.4s;
+}
+
+figure:hover img {
+    transform: scale(1.02);
+}
+
+figcaption {
+    padding: 15px 5px 5px;
 }
 
 figcaption h3 {
-    margin: 10px 0 5px;
-    color: #2c3e50;
+    margin: 0 0 8px;
+    color: #4a4a44;
+    font-size: 22px;
+    border-left: 4px solid #9ab0a0;
+    padding-left: 12px;
 }
 
 figcaption p {
     margin: 0;
-    color: #666;
-    line-height: 1.4;
+    color: #6b6b63;
+    line-height: 1.5;
+    font-size: 14px;
 }
 
 /* ===== ТАБЛИЦЫ ===== */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 30px 0;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 40px 0;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(90, 80, 70, 0.08);
 }
 
-/* Заголовки таблицы (темно-серый фон, белый текст, жирный, по центру) */
 th {
-    background-color: #333;
-    color: white;
-    font-weight: bold;
+    background-color: #9ab0a0;  /* Приглушённый зелёный */
+    color: #ffffff;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 18px;
     text-align: center;
-    padding: 12px;
-    border: 2px double #666;
+    padding: 15px;
+    border: 2px double #c0cfc4;
+    letter-spacing: 0.5px;
 }
 
-/* Обычные ячейки (светло-серый фон, черный текст) */
 td {
-    background-color: #f2f2f2;
-    color: black;
-    padding: 10px;
-    border: 1px solid #ccc;
-    text-align: left;
+    background-color: #fefcf8;  /* Очень светлый бежевый */
+    color: #5e5b56;
+    padding: 15px;
+    border: 1px solid #e8dfd1;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
     vertical-align: middle;
 }
 
-/* Ячейки с картинками в таблице */
 td img {
     display: block;
     max-width: 200px;
     height: auto;
-    border-radius: 4px;
+    border-radius: 6px;
+    border: 2px solid #e8dfd1;
+    transition: opacity 0.3s;
 }
 
-/* ===== ССЫЛКИ (СИНИЙ ЦВЕТ) ===== */
+td img:hover {
+    opacity: 0.9;
+}
+
+/* ===== ССЫЛКИ ===== */
 a:link {
-    color: #0066cc;
+    color: #6b8c7d;  /* Мятно-зелёный */
     text-decoration: none;
-    font-weight: normal;
+    font-weight: 500;
+    transition: all 0.3s;
 }
 
 a:visited {
-    color: #663399;
+    color: #8a7e72;  /* Приглушённый коричневый */
 }
 
 a:hover {
-    color: #ff6600;
+    color: #4a6b5c;  /* Тёмный зелёный */
     text-decoration: underline;
-    font-weight: bold;
 }
 
 a:active {
-    color: #ff0000;
+    color: #9ab0a0;
 }
 
-/* Специально для ссылок в header/footer (переопределяем, чтобы они были белыми) */
+/* Ссылки в header/footer — свой стиль */
 header a:link, header a:visited,
 footer a:link, footer a:visited {
-    color: white;
+    color: #4a4a44;
 }
 
 header a:hover, footer a:hover {
-    color: #e67e22;
-}
-
-header a:active, footer a:active {
-    color: #ff9900;
+    color: #6b8c7d;
+    text-decoration: none;
 }
 
 /* ===== ФОРМА ===== */
 form {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    max-width: 600px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(154, 176, 160, 0.1);
+    max-width: 700px;
     margin: 0 auto;
+    border: 1px solid #e8dfd1;
 }
 
 form div {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -228,8 +289,10 @@ form div {
 
 form label {
     width: 200px;
-    font-weight: bold;
-    color: #2c3e50;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #4a4a44;
 }
 
 /* Поля ввода */
@@ -237,87 +300,153 @@ form input[type="text"],
 form select,
 form textarea {
     flex: 1;
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 4px;
-    font-family: Georgia, serif;
+    padding: 12px 15px;
+    border: 2px solid #e8dfd1;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
-    transition: border-color 0.3s;
+    background-color: #fefcf8;
+    transition: all 0.3s;
 }
 
 form input[type="text"]:focus,
 form select:focus,
 form textarea:focus {
-    border-color: #e67e22;
+    border-color: #9ab0a0;
+    background-color: #ffffff;
     outline: none;
+    box-shadow: 0 0 0 3px rgba(154, 176, 160, 0.2);
 }
 
-/* Флажки и радио кнопки */
+/* Флажки и радио */
 form div:has(input[type="checkbox"]),
 form div:has(input[type="radio"]) {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
+    align-items: center;
 }
 
 form div:has(input[type="checkbox"]) label,
 form div:has(input[type="radio"]) label {
     width: auto;
-    font-weight: normal;
-    margin-right: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: #5e5b56;
+    margin-right: 15px;
 }
 
 form input[type="checkbox"],
 form input[type="radio"] {
-    margin-right: 5px;
+    margin-right: 6px;
+    accent-color: #9ab0a0;  /* Зелёные чекбоксы */
+    width: 18px;
+    height: 18px;
 }
 
 /* Кнопки */
 form input[type="submit"],
 form input[type="reset"] {
-    background-color: #2c3e50;
+    background-color: #9ab0a0;
     color: white;
     border: none;
-    padding: 12px 25px;
-    border-radius: 4px;
+    padding: 14px 35px;
+    border-radius: 30px;
     cursor: pointer;
-    font-family: Georgia, serif;
-    font-size: 16px;
-    font-weight: bold;
-    margin-right: 15px;
-    transition: background-color 0.3s;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-right: 20px;
+    transition: all 0.3s;
+    border: 2px solid transparent;
 }
 
 form input[type="submit"]:hover,
 form input[type="reset"]:hover {
-    background-color: #e67e22;
+    background-color: #6b8c7d;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(107, 140, 125, 0.3);
 }
 
-/* Для многострочного поля */
+form input[type="reset"] {
+    background-color: #e8dfd1;
+    color: #4a4a44;
+}
+
+form input[type="reset"]:hover {
+    background-color: #dacfc1;
+}
+
+/* Текстовая область */
 textarea {
     resize: vertical;
-    min-height: 100px;
+    min-height: 120px;
 }
 
 /* Заголовки страниц */
 h1 {
-    color: #2c3e50;
-    border-bottom: 3px solid #e67e22;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
+    font-size: 42px;
+    color: #4a4a44;
+    border-bottom: 3px solid #9ab0a0;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 h2 {
-    color: #2c3e50;
-    margin-top: 40px;
+    font-size: 32px;
+    color: #4a4a44;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    position: relative;
+    padding-left: 20px;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    height: 25px;
+    width: 5px;
+    background-color: #9ab0a0;
+    border-radius: 3px;
 }
 
 /* ===== СТРАНИЦЫ СТИЛЕЙ ===== */
 main img[width="600"] {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    margin: 20px 0;
-    border: 3px solid white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(90, 80, 70, 0.15);
+    margin: 25px 0;
+    border: 3px solid #ffffff;
+    transition: transform 0.4s;
+}
+
+main img[width="600"]:hover {
+    transform: scale(1.01);
+}
+
+/* Описание стиля на страницах */
+main div {
+    background-color: #fefcf8;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 30px 0;
+    border-left: 5px solid #9ab0a0;
+    box-shadow: 0 4px 12px rgba(154, 176, 160, 0.1);
+}
+
+main div h2 {
+    margin-top: 0;
+    padding-left: 0;
+}
+
+main div h2::before {
+    display: none;
 }
