@@ -56,23 +56,15 @@
                     </div>
                 </div>
 
-                <!-- Цветовая гамма (матрица 2x2) -->
+                <!-- Цветовая гамма -->
                 <div>
                     <p>Цветовая гамма:</p>
                     <div class="form-content">
                         <div class="checkbox-grid">
-                            <label>
-                                <input type="checkbox" name="color" value="Светлая"> Светлая
-                            </label>
-                            <label>
-                                <input type="checkbox" name="color" value="Темная"> Темная
-                            </label>
-                            <label>
-                                <input type="checkbox" name="color" value="Натуральная"> Натуральная
-                            </label>
-                            <label>
-                                <input type="checkbox" name="color" value="Яркая"> Яркая
-                            </label>
+                            <label><input type="checkbox" name="color" value="Светлая"> Светлая</label>
+                            <label><input type="checkbox" name="color" value="Темная"> Темная</label>
+                            <label><input type="checkbox" name="color" value="Натуральная"> Натуральная</label>
+                            <label><input type="checkbox" name="color" value="Яркая"> Яркая</label>
                         </div>
                     </div>
                 </div>
@@ -82,29 +74,17 @@
                     <p>Стиль интерьера:</p>
                     <div class="form-content">
                         <div class="radio-grid">
-                            <label>
-                                <input type="radio" name="style" value="Классический"> Классический
-                            </label>
-                            <label>
-                                <input type="radio" name="style" value="Скандинавский"> Скандинавский
-                            </label>
-                            <label>
-                                <input type="radio" name="style" value="Минимализм"> Минимализм
-                            </label>
-                            <label>
-                                <input type="radio" name="style" value="Лофт"> Лофт
-                            </label>
-                            <label>
-                                <input type="radio" name="style" value="Арт-деко"> Арт-деко
-                            </label>
-                            <label>
-                                <input type="radio" name="style" value="Этнический"> Этнический
-                            </label>
+                            <label><input type="radio" name="style" value="Классический"> Классический</label>
+                            <label><input type="radio" name="style" value="Скандинавский"> Скандинавский</label>
+                            <label><input type="radio" name="style" value="Минимализм"> Минимализм</label>
+                            <label><input type="radio" name="style" value="Лофт"> Лофт</label>
+                            <label><input type="radio" name="style" value="Арт-деко"> Арт-деко</label>
+                            <label><input type="radio" name="style" value="Этнический"> Этнический</label>
                         </div>
                     </div>
                 </div>
 
-                <!-- Форма взаимодействия (выпадающий список) -->
+                <!-- Форма взаимодействия -->
                 <div>
                     <label for="contact">Форма взаимодействия:</label>
                     <div class="form-content">
@@ -116,7 +96,7 @@
                     </div>
                 </div>
 
-                <!-- Комментарий к дизайнеру -->
+                <!-- Комментарий -->
                 <div>
                     <label for="comment">Комментарий к дизайнеру:</label>
                     <div class="form-content">
@@ -133,7 +113,11 @@
                 </div>
             </form>
 
-            <!-- Контейнер для карточек заказов -->
+            <!-- КОНТЕЙНЕР ДЛЯ КАРТОЧЕК - ЗАКРЫВАЕМ ФОРМУ РАНЬШЕ -->
+        </section>
+        
+        <!-- Заголовок и контейнер для карточек должны быть ПОСЛЕ формы -->
+        <section>
             <h2>Ваши заказы</h2>
             <div id="ordersContainer" class="orders-container"></div>
         </section>
@@ -212,12 +196,22 @@
             return selectedRadio ? selectedRadio.value : 'Не выбран';
         }
 
+        // Простая защита от XSS
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
         // Функция создания карточки заказа
         function createOrderCard(orderData) {
             const card = document.createElement('div');
             card.className = 'order-card';
             
-            // Формируем HTML карточки
             card.innerHTML = `
                 <div class="card-header">
                     <h3>Заказ от ${new Date().toLocaleString()}</h3>
@@ -238,22 +232,10 @@
             return card;
         }
 
-        // Простая защита от XSS
-        function escapeHtml(str) {
-            if (!str) return '';
-            return str
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/"/g, '&quot;')
-                .replace(/'/g, '&#39;');
-        }
-
         // Обработчик отправки формы
         form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Отменяем перезагрузку страницы
+            event.preventDefault();
             
-            // Получаем значения полей
             const fio = document.getElementById('fio').value;
             const address = document.getElementById('address').value;
             const phone = document.getElementById('phone').value;
@@ -263,12 +245,10 @@
             const colors = getSelectedColors();
             const style = getSelectedStyle();
             
-            // Валидация
             if (!validateForm(fio, address, phone, email)) {
                 return;
             }
             
-            // Создаём объект с данными заказа
             const orderData = {
                 fio: fio,
                 address: address,
@@ -280,14 +260,9 @@
                 comment: comment
             };
             
-            // Создаём карточку и добавляем в контейнер
             const card = createOrderCard(orderData);
-            ordersContainer.prepend(card); // Новый заказ сверху
-            
-            // Очищаем форму
+            ordersContainer.prepend(card);
             form.reset();
-            
-            // Показываем сообщение об успехе
             alert('Заказ успешно оформлен!');
         });
     </script>
