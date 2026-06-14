@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма обратной связи</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="images/logo.jpg" alt="Логотип студии дизайна интерьера" width="150">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="form.html">Форма обратной связи</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Оформить заказ на дизайн-проект</h1>
+            
+            <!-- Убрана белая подложка, форма теперь прозрачная -->
+            <form>
+                <!-- ФИО -->
+                <div>
+                    <label for="fio">ФИО заявителя:</label>
+                    <div class="form-content">
+                        <input type="text" id="fio" name="fio">
+                    </div>
+                </div>
+                
+                <!-- Адрес -->
+                <div>
+                    <label for="address">Адрес объекта:</label>
+                    <div class="form-content">
+                        <input type="text" id="address" name="address">
+                    </div>
+                </div>
+                
+                <!-- Телефон -->
+                <div>
+                    <label for="phone">Телефон:</label>
+                    <div class="form-content">
+                        <input type="text" id="phone" name="phone">
+                    </div>
+                </div>
+                
+                <!-- Email -->
+                <div>
+                    <label for="email">Адрес электронной почты:</label>
+                    <div class="form-content">
+                        <input type="text" id="email" name="email">
+                    </div>
+                </div>
+
+                <!-- Цветовая гамма (матрица 2x2) -->
+                <div>
+                    <p>Цветовая гамма:</p>
+                    <div class="form-content">
+                        <div class="checkbox-grid">
+                            <label>
+                                <input type="checkbox" name="color" value="light"> Светлая
+                            </label>
+                            <label>
+                                <input type="checkbox" name="color" value="dark"> Темная
+                            </label>
+                            <label>
+                                <input type="checkbox" name="color" value="natural"> Натуральная
+                            </label>
+                            <label>
+                                <input type="checkbox" name="color" value="bright"> Яркая
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Стиль интерьера -->
+                <div>
+                    <p>Стиль интерьера:</p>
+                    <div class="form-content">
+                        <div class="radio-grid">
+                            <label>
+                                <input type="radio" name="style" value="classic"> Классический
+                            </label>
+                            <label>
+                                <input type="radio" name="style" value="scandi"> Скандинавский
+                            </label>
+                            <label>
+                                <input type="radio" name="style" value="minimalism"> Минимализм
+                            </label>
+                            <label>
+                                <input type="radio" name="style" value="loft"> Лофт
+                            </label>
+                            <label>
+                                <input type="radio" name="style" value="artdeco"> Арт-деко
+                            </label>
+                            <label>
+                                <input type="radio" name="style" value="ethnic"> Этнический
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Форма взаимодействия (выпадающий список) -->
+                <div>
+                    <label for="contact">Форма взаимодействия:</label>
+                    <div class="form-content">
+                        <select id="contact" name="contact">
+                            <option value="email">По почте</option>
+                            <option value="phone">По телефону</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Комментарий к дизайнеру -->
+                <div>
+                    <label for="comment">Комментарий к дизайнеру:</label>
+                    <div class="form-content">
+                        <textarea id="comment" name="comment" rows="5" cols="40" wrap="soft"></textarea>
+                    </div>
+                </div>
+
+                <!-- Кнопки -->
+                <div>
+                    <div class="button-group">
+                        <input type="submit" value="Оформить заказ">
+                        <input type="reset" value="Очистить форму">
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <a href="https://miet.ru/" target="_blank">
+            <img src="images/miet-logo.png" alt="Логотип НИУ МИЭТ" width="100">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="about.html">О НАС</a></li>
+                <li><a href="form.html">ФОРМА ОБРАТНОЙ СВЯЗИ</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
