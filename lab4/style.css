@@ -459,3 +459,65 @@ main div {
 main div h2 {
     margin-top: 0;
 }
+/* ===== КОНТЕЙНЕР ДЛЯ КАРТОЧЕК ЗАКАЗОВ ===== */
+.orders-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* ===== СТИЛИ КАРТОЧКИ ЗАКАЗА ===== */
+.order-card {
+    background-color: #ffffff;
+    border: 1px solid #e0d9ce;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.order-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #9ab0a0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.card-header h3 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 18px;
+}
+
+.delete-btn {
+    background-color: #e8dfd1;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #dacfc1;
+}
+
+.card-content p {
+    margin: 8px 0;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.card-content strong {
+    color: #6b8c7d;
+}
