@@ -1,0 +1,461 @@
+/* ===== ПОДКЛЮЧЕНИЕ ШРИФТА ==== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+/* ===== ОБЩИЕ СТИЛИ ===== */
+body {
+    font-family: 'Cormorant Garamond', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #faf7f2;
+    color: #2c3e50;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, figcaption, td, th, a, label, input, select, textarea, form div label {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+h1 {
+    font-size: 48px;
+    color: #2c3e50;
+    border-bottom: 3px solid #9ab0a0;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+h2::before {
+    display: none;
+}
+
+/* ===== ШАПКА ===== */
+/* justify-content, align-items, gap — согласно заданию */
+header {
+    background-color: #e8dfd1;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;  /* Логотип и навигация по краям */
+    align-items: center;            /* Вертикальное выравнивание */
+    border-bottom: 2px solid #9ab0a0;
+    box-shadow: 0 4px 12px rgba(154, 176, 160, 0.15);
+}
+
+header a {
+    text-decoration: none;
+}
+
+header img {
+    vertical-align: middle;
+    transition: opacity 0.3s;
+}
+
+header img:hover {
+    opacity: 0.8;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 40px;                     /* Расстояние между ссылками */
+}
+
+header nav ul li a {
+    color: #2c3e50 !important;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #6b8c7d;
+    border-bottom: 2px solid #9ab0a0;
+}
+
+/* ===== ПОДВАЛ ===== */
+/* Footer — такие же стили, как Header */
+footer {
+    background-color: #0F45C7;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;  /* Логотип и навигация по краям */
+    align-items: center;            /* Вертикальное выравнивание */
+    margin-top: 60px;
+    box-shadow: 0 -4px 12px rgba(15, 69, 199, 0.2);
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer img {
+    vertical-align: middle;
+    transition: opacity 0.3s;
+}
+
+footer img:hover {
+    opacity: 0.8;
+}
+
+footer nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 40px;                     /* Расстояние между ссылками */
+}
+
+footer nav ul li a {
+    color: white !important;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+footer nav ul li a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+main {
+    max-width: 1300px;
+    margin: 50px auto;
+    padding: 0 30px;
+    min-height: 60vh;
+}
+
+/* ===== КАРТОЧКИ НА ГЛАВНОЙ ===== */
+/* min-width, max-width, flex-wrap, адаптивность */
+main section:last-child {
+    display: flex;
+    flex-wrap: wrap;               /* Перенос карточек на следующую строку */
+    gap: 30px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+figure {
+    min-width: 280px;              /* Минимальная ширина карточки */
+    max-width: 350px;              /* Максимальная ширина карточки */
+    flex: 1 1 auto;                /* Адаптивное растягивание */
+    margin: 0;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e0d9ce;
+    box-shadow: 0 8px 20px rgba(90, 80, 70, 0.08);
+    transition: all 0.4s;
+}
+
+figure:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(107, 140, 125, 0.15);
+    border-color: #9ab0a0;
+}
+
+figure a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+figure img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+figure:hover img {
+    transform: scale(1.02);
+}
+
+figcaption {
+    padding: 15px 5px 5px;
+}
+
+figcaption h3 {
+    margin: 0 0 8px;
+    color: #2c3e50;
+    font-size: 24px;
+    padding-left: 0;
+}
+
+figcaption p {
+    margin: 0;
+    color: #4a4a44;
+    line-height: 1.5;
+    font-size: 18px;
+}
+
+/* ===== ТАБЛИЦЫ ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 40px 0;
+    background-color: #ffffff;
+    border: 1px solid #b0a28a;
+}
+
+th, td {
+    border: 1px solid #b0a28a;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #9ab0a0;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Ячейки с цифрами 1 и 2 - желтоватый цвет */
+th:first-child,
+td:first-child {
+    background-color: #f5e6d3;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+td {
+    background-color: #fefcf8;
+    color: #2c3e50;
+    font-size: 18px;
+}
+
+td img {
+    display: block;
+    max-width: 200px;
+    height: auto;
+    border: 1px solid #b0a28a;
+}
+
+/* ===== ССЫЛКИ ===== */
+a:link {
+    color: #6b8c7d;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    font-size: 18px;
+}
+
+a:visited {
+    color: #8a7e72;
+}
+
+a:hover {
+    color: #4a6b5c;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #9ab0a0;
+}
+
+header a:link, header a:visited,
+footer a:link, footer a:visited {
+    color: white;
+}
+
+header a:hover, footer a:hover {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+/* ===== ФОРМА ===== */
+/* flex-direction: column, gap, выравнивание кнопок */
+form {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;        /* Вертикальное расположение блоков */
+    gap: 25px;                    /* Отступы между блоками формы */
+}
+
+form div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Все лейблы и заголовки секций */
+form > div > label,
+form > div > p {
+    width: 200px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #2c3e50;
+    margin: 8px 15px 0 0;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+/* Контейнер для содержимого справа */
+.form-content {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Поля ввода */
+form input[type="text"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e8dfd1;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    background-color: #fefcf8;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    border-radius: 0;
+}
+
+form input[type="text"]:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #9ab0a0;
+    background-color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(154, 176, 160, 0.2);
+}
+
+/* Сетка для цветовой гаммы 2x2 */
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 20px;
+    margin-top: 5px;
+}
+
+.checkbox-grid label {
+    width: auto;
+    font-weight: 400;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Сетка для стилей интерьера */
+.radio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 25px;
+    margin-top: 5px;
+}
+
+.radio-grid label {
+    width: auto;
+    font-weight: 400;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Чекбоксы и радио */
+form input[type="checkbox"],
+form input[type="radio"] {
+    accent-color: #9ab0a0;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+}
+
+/* Кнопки — выравнивание по правому краю */
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;     /* Прижаты к правому краю */
+    width: 100%;
+}
+
+form input[type="submit"],
+form input[type="reset"] {
+    background-color: #9ab0a0;
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+form input[type="submit"]:hover,
+form input[type="reset"]:hover {
+    background-color: #6b8c7d;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(107, 140, 125, 0.3);
+}
+
+form input[type="reset"] {
+    background-color: #e8dfd1;
+    color: #2c3e50;
+}
+
+form input[type="reset"]:hover {
+    background-color: #dacfc1;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ===== СТРАНИЦЫ СТИЛЕЙ ===== */
+main img[width="600"] {
+    max-width: 100%;
+    height: auto;
+    margin: 25px 0;
+    border: 3px solid #ffffff;
+    transition: transform 0.4s;
+}
+
+main img[width="600"]:hover {
+    transform: scale(1.01);
+}
+
+main div {
+    background-color: #fefcf8;
+    padding: 25px;
+    margin: 30px 0;
+    border-left: none;
+    box-shadow: 0 4px 12px rgba(154, 176, 160, 0.1);
+}
+
+main div h2 {
+    margin-top: 0;
+}
