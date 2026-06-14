@@ -39,12 +39,13 @@ h2::before {
 }
 
 /* ===== ШАПКА ===== */
+/* justify-content, align-items, gap — согласно заданию */
 header {
     background-color: #e8dfd1;
     padding: 20px 40px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: space-between;  /* Логотип и навигация по краям */
+    align-items: center;            /* Вертикальное выравнивание */
     border-bottom: 2px solid #9ab0a0;
     box-shadow: 0 4px 12px rgba(154, 176, 160, 0.15);
 }
@@ -67,7 +68,7 @@ header nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 40px;
+    gap: 40px;                     /* Расстояние между ссылками */
 }
 
 header nav ul li a {
@@ -88,12 +89,13 @@ header nav ul li a:hover {
 }
 
 /* ===== ПОДВАЛ ===== */
+/* Footer — такие же стили, как Header */
 footer {
     background-color: #0F45C7;
     padding: 20px 40px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: space-between;  /* Логотип и навигация по краям */
+    align-items: center;            /* Вертикальное выравнивание */
     margin-top: 60px;
     box-shadow: 0 -4px 12px rgba(15, 69, 199, 0.2);
 }
@@ -116,7 +118,7 @@ footer nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 40px;
+    gap: 40px;                     /* Расстояние между ссылками */
 }
 
 footer nav ul li a {
@@ -143,16 +145,19 @@ main {
 }
 
 /* ===== КАРТОЧКИ НА ГЛАВНОЙ ===== */
+/* min-width, max-width, flex-wrap, адаптивность */
 main section:last-child {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;               /* Перенос карточек на следующую строку */
     gap: 30px;
     justify-content: center;
     margin-top: 40px;
 }
 
 figure {
-    width: 320px;
+    min-width: 280px;              /* Минимальная ширина карточки */
+    max-width: 350px;              /* Максимальная ширина карточки */
+    flex: 1 1 auto;                /* Адаптивное растягивание */
     margin: 0;
     padding: 20px;
     background-color: #ffffff;
@@ -170,6 +175,7 @@ figure:hover {
 figure a {
     text-decoration: none;
     color: inherit;
+    display: block;
 }
 
 figure img {
@@ -278,15 +284,17 @@ header a:hover, footer a:hover {
 }
 
 /* ===== ФОРМА ===== */
-/* Убрана белая подложка, форма теперь прозрачная */
+/* flex-direction: column, gap, выравнивание кнопок */
 form {
     max-width: 700px;
     margin: 0 auto;
     padding: 0;
+    display: flex;
+    flex-direction: column;        /* Вертикальное расположение блоков */
+    gap: 25px;                    /* Отступы между блоками формы */
 }
 
 form div {
-    margin-bottom: 25px;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -383,11 +391,12 @@ form input[type="radio"] {
     margin: 0;
 }
 
-/* Кнопки */
+/* Кнопки — выравнивание по правому краю */
 .button-group {
     display: flex;
     gap: 15px;
-    margin-left: 215px;
+    justify-content: flex-end;     /* Прижаты к правому краю */
+    width: 100%;
 }
 
 form input[type="submit"],
